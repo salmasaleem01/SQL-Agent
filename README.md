@@ -13,7 +13,6 @@ _A collection of agent demos evolving from simple conversational assistants to s
 5. [Usage](#usage)  
 6. [Security / Safety Considerations](#security-/-safety-considerations)  
 7. [How to Contribute or Extend](#how-to-contribute-or-extend)  
-8. [License](#license)
 
 ---
 
