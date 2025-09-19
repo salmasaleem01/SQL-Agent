@@ -59,6 +59,20 @@ This repository showcases the step-by-step development of AI agents using LangCh
 - A working SQLite file (or your choice of SQL database) configured appropriately  
 
 ---
+## Security / Safety Considerations
+
+Do not run risky deletion scripts (like 02_risky_delete_demo.py) on machines with important data.
+Always double check input SQL when allowed — even with guardrails.
+Guardrails include: only SELECT, limit injection, no multiple statements.
+Ensure schema whitelist is up to date (if using additional tables).
+___
+
+## How to Contribute or Extend
+
+Add additional analytics reports or metrics (e.g., churn rate, cohort analysis).
+Support more databases (PostgreSQL, MySQL) with similar safety checks.
+Improve performance for large data queries or integrate caching.
+Add user authentication / access control if sharing across users.
 
 ## Usage
 
@@ -87,5 +101,5 @@ python 02_risky_delete_demo.py
 python 03_guardrailed_agent.py
 
 # Advanced analytics / BI-oriented agent
-python 04_advanced_analytics_agent.py ```
+python 04_advanced_analytics_agent.py 
 
