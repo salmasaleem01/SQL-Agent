@@ -1,8 +1,7 @@
-AI Agents Demo Suite
+#AI Agents Demo Suite
 
 This repository demonstrates the evolution of AI agents, starting from basic conversational agents to production-ready analytics agents with guardrails. Each script builds on the previous one, showing both capabilities and risks, while progressively introducing security measures and business intelligence logic.
-
-📂 Project Structure
+# 📂 Project Structure
 .
 ├── 00_simple_conversational_agent.py   # Agent with dummy tool (conversation only)
 ├── 01_simple_agent.py                  # Minimal agent demo
@@ -120,3 +119,6 @@ Guardrails → Add safety and reliability.
 
 Advanced BI logic → Apply agents to real-world analytics use cases.
 
+📜 License
+
+MIT License – free to use, adapt, and share with attribution.
