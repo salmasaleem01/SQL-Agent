@@ -1,124 +1,91 @@
-#AI Agents Demo Suite
+# SQL-Agent Demo Suite
 
-This repository demonstrates the evolution of AI agents, starting from basic conversational agents to production-ready analytics agents with guardrails. Each script builds on the previous one, showing both capabilities and risks, while progressively introducing security measures and business intelligence logic.
-# 📂 Project Structure
-.
-├── 00_simple_conversational_agent.py   # Agent with dummy tool (conversation only)
-├── 01_simple_agent.py                  # Minimal agent demo
-├── 02_risky_delete_demo.py             # Risk demo: unsafe, unconstrained agent
-├── 03_guardrailed_agent.py             # Safe SQL agent with guardrails
-├── 04_advanced_analytics_agent.py      # BI-ready analytics SQL agent
-└── README.md                           # Project documentation
+_A collection of agent demos evolving from simple conversational assistants to secure, analytics-oriented agents for BI and reporting._
 
-🚀 Scripts Overview
-00. Simple Conversational Agent
+---
 
-Demonstrates a conversational agent using LangChain with a dummy tool.
+## 🔍 Table of Contents
 
-No database or external logic — just shows the framework structure.
+1. [Project Overview](#project-overview)  
+2. [Scripts & Progression](#scripts-&-progression)  
+3. [Key Features](#key-features)  
+4. [Requirements](#requirements)  
+5. [Usage](#usage)  
+6. [Security / Safety Considerations](#security-/-safety-considerations)  
+7. [How to Contribute or Extend](#how-to-contribute-or-extend)  
+8. [License](#license)
 
-Educational focus: understanding agent scaffolding.
+---
 
-01. Simple Agent
+## Project Overview
 
-Minimal example of a LangChain agent.
+This repository showcases the step-by-step development of AI agents using LangChain, focusing on:
 
-Foundation for adding tools and external integrations.
+- Understanding agent architectures  
+- Highlighting risks of unsupervised autonomous actions  
+- Introducing guardrails for database security  
+- Building advanced analytics capabilities for business intelligence
 
-Educational focus: agent basics before introducing risks and safety.
+---
 
-02. Risky Delete Demo ⚠️
+## Scripts & Progression
 
-Shows what happens when agents are unconstrained.
+| Script | Purpose | Highlights |
+|---|---|---|
+| `00_simple_conversational_agent.py` | Introductory conversational agent. No tools or SQL — just core agent framework. | Shows how agents are structured, system messages, conversation loops. |
+| `01_simple_agent.py` | Basic agent usage. Starting to use the agent framework. | Formalizes agent setup before adding external tools. |
+| `02_risky_delete_demo.py` | Demonstrates danger of unconstrained actions, especially file deletions. | Helps understand why guardrails are necessary. ⚠️ |
+| `03_guardrailed_agent.py` | Safe SQL agent: only read operations, validated inputs, protection against unsafe SQL. | Introduces security checks, regex validation, etc. |
+| `04_advanced_analytics_agent.py` | Full-blown analytics / BI agent with secure SQL, joins, aggregation, trends, segmentation, multi-turn queries. | Combining rich business logic and analytics with safety. |
 
-Demonstrates unsafe file deletion to highlight potential dangers.
+---
 
-Educational focus: importance of guardrails and safety.
+## Key Features
 
-⚠️ Do not run on production machines.
+- Secure SQL execution: only `SELECT`, no writes/updates/deletes.  
+- Input validation: regex patterns, single statement enforcement.  
+- Automatic limits on result sets when needed.  
+- Support for advanced SQL constructs: JOINs, window functions, CTEs, historical trends.  
+- Multi-turn interaction for iterative analysis.  
+- Clear system message context with schema, business logic (e.g., revenue, refunds, etc.).  
 
-03. Guardrailed Agent
+---
 
-Introduces security guardrails for SQL queries:
+## Requirements
 
-Only SELECT allowed
+- Python 3.9+  
+- A `.env` file containing necessary environment variables (e.g. `GOOGLE_API_KEY`)  
+- Dependencies listed in `requirements.txt` (ensure they match your versions)  
+- A working SQLite file (or your choice of SQL database) configured appropriately  
 
-Regex-based validation
+---
 
-Prevention of destructive SQL commands
+## Usage
 
-Result set limiting
+```bash
+# Clone repository
+git clone https://github.com/salmasaleem01/SQL-Agent.git
+cd SQL-Agent
 
-Educational focus: how to safely integrate agents with databases.
+# (If needed) create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
-04. Advanced Analytics SQL Agent
-
-Production-style agent for business intelligence and analytics.
-
-Features:
-
-Revenue analysis, customer segmentation, lifetime value
-
-Time-series trend analysis
-
-Product rankings, aggregations, and multi-table joins
-
-Multi-turn conversation for iterative queries
-
-Security features inherited from Guardrailed Agent:
-
-Read-only enforcement
-
-Automatic LIMIT injection
-
-SQL injection protection
-
-Educational focus: scalable, production-ready analytics agents.
-
-🛠️ Requirements
-
-Python 3.9+
-
-Dependencies (install via requirements.txt):
-
+# Install dependencies
 pip install -r requirements.txt
-
-
-.env file containing your API key(s):
-
-GOOGLE_API_KEY=your_api_key_here
-
-▶️ Usage
-
-Run scripts independently depending on what you want to explore:
-
-# Conversational agent (framework only)
+Then run individual scripts as needed:
+# Conversational agent only
 python 00_simple_conversational_agent.py
 
-# Simple agent
+# Basic agent
 python 01_simple_agent.py
 
-# Risky demo (unsafe – be careful!)
+# Risky behavior demo
 python 02_risky_delete_demo.py
 
-# Guardrailed SQL agent
+# Guardrailed (safe) SQL agent
 python 03_guardrailed_agent.py
 
-# Advanced analytics BI agent
-python 04_advanced_analytics_agent.py
+# Advanced analytics / BI-oriented agent
+python 04_advanced_analytics_agent.py ```
 
-🎯 Learning Journey
-
-This repo takes you step-by-step:
-
-Basic agents → Understand framework.
-
-Risk demonstration → See dangers of unconstrained automation.
-
-Guardrails → Add safety and reliability.
-
-Advanced BI logic → Apply agents to real-world analytics use cases.
-
-📜 License
-
-MIT License – free to use, adapt, and share with attribution.
